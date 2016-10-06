@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Example TODO Application using the ng2-store</title>
+    <link rel="stylesheet" href="node_modules/intl-tel-input/build/css/intlTelInput.css">
+    <!--<script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>-->
+    <script src="/node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <!--<script src="/node_modules/angular2/bundles/http.min.js"></script>-->
+
+    <script>
+        System.config({
+            defaultJSExtensions: true,
+            packages: {
+                "@angular/common": {"defaultExtension": false},
+                "@angular/core": {"defaultExtension": false},
+                "@angular/compiler": {"defaultExtension": false}
+            },
+            map: {
+                'angular2-library-example': 'node_modules/angular2-library-example',
+                '@angular/core': 'node_modules/@angular/core/bundles/core.umd.min.js',
+                '@angular/compiler': 'node_modules/@angular/compiler/bundles/compiler.umd.min.js',
+                '@angular/common': 'node_modules/@angular/common/bundles/common.umd.min.js',
+                '@angular/platform-browser': 'node_modules/@angular/platform-browser/bundles/platform-browser.umd.js',
+                '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+                'intl-tel-input': 'node_modules/intl-tel-input/build/js/intlTelInput.js',
+                'intl-tel-input-utils': 'node_modules/intl-tel-input/build/js/utils.js',
+                'jquery': 'node_modules/jquery/dist/jquery.js',
+            }
+        });
+    </script>
+
+    <script src="/node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <!--<script src="/node_modules/@angular/compiler/bundles/compiler.umd.min.js"></script>
+    <script src="/node_modules/@angular/core/bundles/core.umd.min.js"></script>
+    <script src="/node_modules/@angular/common/bundles/common.umd.min.js"></script>-->
+
+    <script>
+        System.import('lib/main').catch(console.log.bind(console));
+    </script>
+
+    <style>
+
+        [override] hello-world h1 {
+            color:red;
+        }
+
+    </style>
+
+</head>
+<body override>
+
+<app></app>
+<hello-world></hello-world>
+
+</body>
+</html>
