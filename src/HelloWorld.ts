@@ -1,5 +1,4 @@
-
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'hello-world',
@@ -10,6 +9,7 @@ import {Component} from 'angular2/core';
     `],
     template: `<div>
                   <h1 (click)="onClick()">{{message}}</h1>
+                  <input type="text" ng2TelInput />
                </div>`
 })
 export class HelloWorld {

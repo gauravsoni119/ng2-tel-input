@@ -5,7 +5,8 @@
   "main": "angular2-library-example.js",
   "scripts": {
     "watch": "tsc -p src -w",
-    "build": "rm -rf lib && tsc -p src"
+    "build": "tsc -p src",
+    "start": "http-server -c-1 ."
   },
   "repository": {
     "type": "git",
@@ -24,10 +25,22 @@
   },
   "homepage": "https://github.com/jhades/angular2-library-seed#readme",
   "devDependencies": {
+    "http-server": "^0.9.0",
     "typescript": "^1.7.5"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.0",
-    "rxjs": "5.0.0-beta.0"
+    "@angular/common": "^2.0.1",
+    "@angular/compiler": "^2.0.1",
+    "@angular/core": "^2.0.1",
+    "@angular/forms": "^2.0.1",
+    "@angular/platform-browser": "^2.0.1",
+    "@angular/platform-browser-dynamic": "^2.0.1",
+    "es6-shim": "^0.35.1",
+    "intl-tel-input": "^9.2.0",
+    "jquery": "^3.1.1",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "^0.19.39",
+    "zone.js": "^0.6.25"
   }
 }
