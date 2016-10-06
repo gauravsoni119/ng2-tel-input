@@ -9,7 +9,7 @@ import {Component} from '@angular/core';
     `],
     template: `<div>
                   <h1 (click)="onClick()">{{message}}</h1>
-                  <input type="text" ng2TelInput />
+                  <input type="text" [ng2TelInput]="{initialCountry: 'gb'}" />
                </div>`
 })
 export class HelloWorld {
