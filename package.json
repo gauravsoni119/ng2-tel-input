@@ -1,7 +1,7 @@
 {
   "name": "ng2-tel-input",
-  "version": "1.0.8",
-  "description": "An example repository for building your own Angular 2 library",
+  "version": "1.0.9",
+  "description": "An Angular 2 wrapper for intl-tel-input library",
   "main": "ng2-intl-tel-input.js",
   "scripts": {
     "watch": "tsc -p src -w",
@@ -13,17 +13,16 @@
     "url": "git+https://github.com/gauravsoni119/ng2-tel-input.git"
   },
   "keywords": [
-    "Angular",
-    "2",
+    "Angular2",
     "Library",
-    "Seed"
+    "intl-tel-input"
   ],
-  "author": "jhades.dev@gmail.com",
+  "author": "sonigaurav119@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jhades/angular2-library-seed/issues"
+    "url": "git+https://github.com/gauravsoni119/ng2-tel-input.git"
   },
-  "homepage": "https://github.com/jhades/angular2-library-seed#readme",
+  "homepage": "https://github.com/gauravsoni119/ng2-tel-input#readme",
   "devDependencies": {
     "@types/intl-tel-input": "0.0.8",
     "@types/jquery": "<2.2",
@@ -38,7 +37,7 @@
     "@angular/platform-browser": "^2.4.10",
     "@angular/platform-browser-dynamic": "^2.4.10",
     "es6-shim": "^0.35.3",
-    "intl-tel-input": "^9.2.0",
+    "intl-tel-input": "^12.0.3",
     "jquery": "^3.1.1",
     "reflect-metadata": "^0.1.10",
     "systemjs": "^0.19.39",
