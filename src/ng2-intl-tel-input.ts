@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 import 'intl-tel-input';
 import 'jquery';
-declare var $;
+declare var $: any;
 
 @Directive({
     selector: '[ng2TelInput]'
