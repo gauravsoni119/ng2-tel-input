@@ -1,3 +1,8 @@
 examples
 node_modules
-src
+Thumbs.db
+.DS_Store
+
+# Ignored files
+*.ts
+!*.d.ts

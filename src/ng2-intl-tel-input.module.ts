@@ -5,7 +5,7 @@ import { Ng2TelInput } from './ng2-intl-tel-input';
 
 @NgModule({
     imports: [
-        BrowserModule,    
+        BrowserModule,
     ],
     declarations: [Ng2TelInput],
 })

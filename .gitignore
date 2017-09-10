@@ -4,4 +4,6 @@ jspm_packages
 .idea
 lib
 build
-
+*.js
+*.map
+*.d.ts
