@@ -8,5 +8,6 @@ import { Ng2TelInput } from './ng2-intl-tel-input';
         BrowserModule,
     ],
     declarations: [Ng2TelInput],
+    exports: [Ng2TelInput]
 })
 export class Ng2TelInputModule { }
