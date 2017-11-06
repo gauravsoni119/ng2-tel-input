@@ -6,7 +6,7 @@
 Run following command to install ng2-tel-input
 npm install ng2-tel-input
 
-After installing, you need to add "intlTelInput.css" in your index.html.
+After installing, you need to add "intlTelInput.css" in your index.html.__
 
 In case of angular-cli, add path to css in your styles property in angular-cli.json. For example, 
 "styles": [
