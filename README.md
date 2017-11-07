@@ -13,6 +13,8 @@ In case of angular-cli, add path to css in your styles property in angular-cli.j
         "styles.css",<br />
         "../node_modules/intl-tel-input/build/css/intlTelInput.css"]<br />
 <br />
+
+Now add Ng2TelInputModule into your AppModule. For example,<br /> import {Ng2TelInputModule} from 'ng2-intl-tel-input';
 Once done, we are ready to use this library.
 
 # How to use with angular-cli
