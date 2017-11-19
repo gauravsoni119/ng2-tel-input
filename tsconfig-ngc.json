@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "commonjs",
+        "lib": [ "es2016", "dom" ],
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": true,
+        "declaration": true,
+        "stripInternal": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "ng2-tel-input.ts",
+        "./src/ng2-tel-input.ts",
+        "./src/ng2-tel-input.module.ts"
+    ],
+    "angularCompilerOptions": {
+        "genDir": "compiled"
+    }
+}

@@ -2,6 +2,7 @@
     "compilerOptions": {
         "noImplicitAny": true,
         "module": "commonjs",
+        "lib": [ "es2015", "dom" ],
         "target": "ES5",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -9,7 +10,7 @@
         "declaration": true
     },
     "files": [
-        "ng2-intl-tel-input.ts"
+        "ng2-tel-input.ts"
     ],
     "exclude": [
         "node_modules"

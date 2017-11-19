@@ -23,7 +23,7 @@ In case of angular-cli, add path to css in your styles property in angular-cli.j
 Now add Ng2TelInputModule into your AppModule. For example,
 
 ```js
-import {Ng2TelInputModule} from 'ng2-intl-tel-input';
+import {Ng2TelInputModule} from 'ng2-tel-input';
 ```
 
 Once done, we are ready to use this library.
