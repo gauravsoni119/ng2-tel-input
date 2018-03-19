@@ -1,6 +1,6 @@
 {
   "name": "ng2-tel-input",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "An Angular 2 wrapper for intl-tel-input library",
   "main": "ng2-tel-input.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "@angular/compiler": "^^5.2.3",
     "@angular/compiler-cli": "^5.2.3",
     "@angular/platform-server": "^5.2.3",
+    "@angular/core": "^5.2.3",
     "@types/intl-tel-input": "0.0.8",
     "@types/jquery": "<2.2",
     "http-server": "^0.9.0",
@@ -36,7 +37,6 @@
   "peerDependencies": {
   },
   "dependencies": {
-    "@angular/core": "^5.2.3",
     "es6-shim": "^0.35.3",
     "intl-tel-input": "^12.1.11",
     "jquery": "^3.1.1",
