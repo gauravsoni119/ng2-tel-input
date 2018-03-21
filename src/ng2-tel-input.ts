@@ -22,13 +22,13 @@ export class Ng2TelInput implements OnInit {
           });
     }
 
-    @HostListener('blur') onBlur() {
+    @HostListener('keyup') onKeyup() {
         let isInputValid:boolean = this.isInputValid();
         if (isInputValid) {
             let telOutput = this.ngTelInput.intlTelInput("getNumber");
             this.hasError.emit(isInputValid);
             this.ng2TelOutput.emit(telOutput);
-        } else 
+        } else
         {
             this.hasError.emit(isInputValid);
         }
