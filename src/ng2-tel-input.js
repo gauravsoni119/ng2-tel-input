@@ -19,7 +19,7 @@ var Ng2TelInput = /** @class */ (function () {
             _this.countryChange.emit(countryData);
         });
     };
-    Ng2TelInput.prototype.onBlur = function () {
+    Ng2TelInput.prototype.onKeyup = function () {
         var isInputValid = this.isInputValid();
         if (isInputValid) {
             var telOutput = this.ngTelInput.intlTelInput("getNumber");
@@ -47,7 +47,7 @@ var Ng2TelInput = /** @class */ (function () {
         'hasError': [{ type: core_1.Output, args: ['hasError',] },],
         'ng2TelOutput': [{ type: core_1.Output, args: ['ng2TelOutput',] },],
         'countryChange': [{ type: core_1.Output, args: ['countryChange',] },],
-        'onBlur': [{ type: core_1.HostListener, args: ['blur',] },],
+        'onKeyup': [{ type: core_1.HostListener, args: ['keyup',] },],
     };
     return Ng2TelInput;
 }());
