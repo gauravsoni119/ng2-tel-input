@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "target": "ES5",
-        "module": "commonjs",
-        "lib": [ "es2016", "dom" ],
+        "target": "es5",
+        "module": "es2015",
+        "lib": [ "es2015", "dom" ],
         "moduleResolution": "node",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
@@ -10,17 +10,17 @@
         "removeComments": false,
         "noImplicitAny": true,
         "declaration": true,
-        "stripInternal": true
+        "stripInternal": true,
+        "outDir": "./dist"
     },
     "exclude": [
         "node_modules"
     ],
     "files": [
-        "ng2-tel-input.ts",
-        "./src/ng2-tel-input.ts",
-        "./src/ng2-tel-input.module.ts"
+        "./ng2-tel-input.ts"
     ],
     "angularCompilerOptions": {
-        "genDir": "compiled"
+        "strictMetadataEmit": true,
+        "skipTemplateCodegen": true
     }
 }

@@ -12,14 +12,19 @@ export class Ng2TelInput implements OnInit {
     @Output('hasError') hasError: EventEmitter<boolean> = new EventEmitter();
     @Output('ng2TelOutput') ng2TelOutput: EventEmitter<any> = new EventEmitter();
     @Output('countryChange') countryChange: EventEmitter<any> = new EventEmitter();
+    @Output('intlTelInputObject') intlTelInputObject: EventEmitter<any> = new EventEmitter();
     ngTelInput: any;
     constructor (private el: ElementRef) {}
     ngOnInit() {
         this.ngTelInput = $(this.el.nativeElement);
-        this.ngTelInput.intlTelInput(this.ng2TelInputOptions);
+        this.ngTelInput.intlTelInput();
+        if (this.ng2TelInputOptions && this.ng2TelInputOptions['initialCountry']) {
+            this.setCountry(this.ng2TelInputOptions['initialCountry']);
+        }
         this.ngTelInput.on("countrychange", (e: any, countryData:any) => {
             this.countryChange.emit(countryData);
           });
+        this.intlTelInputObject.emit(this.ngTelInput);
     }
 
     @HostListener('blur') onBlur() {
@@ -36,5 +41,9 @@ export class Ng2TelInput implements OnInit {
 
     isInputValid(): boolean {
         return this.ngTelInput.intlTelInput('isValidNumber') ? true : false;
+    }
+
+    setCountry(country: any) {
+        this.ngTelInput.intlTelInput('setCountry', country);
     }
 }

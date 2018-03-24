@@ -1,13 +1,12 @@
 {
   "name": "ng2-tel-input",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "An Angular 2 wrapper for intl-tel-input library",
   "main": "ng2-tel-input.js",
   "scripts": {
     "watch": "tsc -p src -w",
-    "build": "tsc -p src",
     "start": "http-server -c-1 .",
-    "prepublish": "ngc -p ./tsconfig-ngc.json"
+    "build": "ngc -p ./tsconfig-ngc.json"
   },
   "repository": {
     "type": "git",
@@ -25,25 +24,25 @@
   },
   "homepage": "https://github.com/gauravsoni119/ng2-tel-input#readme",
   "devDependencies": {
-    "@angular/compiler-cli": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/platform-server": "4.0.0",
+    "@angular/core": "^5.2.0",
+    "es6-shim": "^0.35.3",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.19",
+    "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/platform-server": "^5.2.0",
     "@types/intl-tel-input": "0.0.8",
     "@types/jquery": "<2.2",
     "http-server": "^0.9.0",
-    "typescript": "^2.6.1"
+    "typescript": "~2.5.3"
   },
   "peerDependencies": {
-    "@angular/core": "^4.0.0"
+    "@angular/core": "^5.2.0"
   },
   "dependencies": {
-    "@angular/core": "^4.0.0",
-    "es6-shim": "^0.35.3",
     "intl-tel-input": "^12.0.3",
-    "jquery": "^3.1.1",
-    "reflect-metadata": "^0.1.10",
-    "rxjs": "^5.4.1",
-    "zone.js": "^0.8.14"
+    "jquery": "^3.1.1"
   },
   "typings": "./ng2-tel-input.d.ts"
 }
