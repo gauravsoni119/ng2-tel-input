@@ -17,10 +17,13 @@ export class Ng2TelInput implements OnInit {
     constructor (private el: ElementRef) {}
     ngOnInit() {
         this.ngTelInput = $(this.el.nativeElement);
-        this.ngTelInput.intlTelInput();
-        if (this.ng2TelInputOptions && this.ng2TelInputOptions['initialCountry']) {
-            this.setCountry(this.ng2TelInputOptions['initialCountry']);
+        if(this.ng2TelInputOptions) {
+            this.ngTelInput.intlTelInput(this.ng2TelInputOptions);
         }
+        else {
+            this.ngTelInput.intlTelInput();
+        }
+
         this.ngTelInput.on("countrychange", (e: any, countryData:any) => {
             this.countryChange.emit(countryData);
           });
