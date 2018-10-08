@@ -13,7 +13,7 @@
     "url": "git+https://github.com/gauravsoni119/ng2-tel-input.git"
   },
   "keywords": [
-    "Angular2",
+    "Angular",
     "Library",
     "intl-tel-input"
   ],
@@ -24,12 +24,11 @@
   },
   "homepage": "https://github.com/gauravsoni119/ng2-tel-input#readme",
   "devDependencies": {
-    "@angular/compiler": "^6.0.3",
-    "@angular/compiler-cli": "^6.0.3",
-    "@angular/core": "^6.0.3",
-    "@angular/platform-server": "^5.2.0",
-    "@types/intl-tel-input": "0.0.8",
-    "@types/jquery": "<2.2",
+    "@angular/compiler": "^6.1.9",
+    "@angular/compiler-cli": "^6.1.9",
+    "@angular/core": "^6.1.9",
+    "@angular/common": "^6.1.9",
+    "@types/intl-tel-input": "^0.0.9",
     "es6-shim": "^0.35.3",
     "http-server": "^0.11.1",
     "reflect-metadata": "^0.1.10",
@@ -41,8 +40,7 @@
     "@angular/core": "^6.0.3"
   },
   "dependencies": {
-    "intl-tel-input": "^12.0.3",
-    "jquery": "^3.1.1"
+    "intl-tel-input": "^14.0.3"
   },
   "typings": "./ng2-tel-input.d.ts"
 }
