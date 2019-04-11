@@ -1,52 +1,52 @@
-import { Directive, ElementRef, EventEmitter,
-    HostListener, Input, OnInit, Output } from '@angular/core';
-import * as $ from 'jquery';
-import 'intl-tel-input';
-import 'intl-tel-input/build/js/utils';
+import { Directive, ElementRef, EventEmitter, HostListener, Inject, Input, OnInit, Output, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
+declare const window: any;
 
 @Directive({
-    selector: '[ng2TelInput]',
+  selector: '[ng2TelInput]',
 })
 export class Ng2TelInput implements OnInit {
-    @Input('ng2TelInputOptions') ng2TelInputOptions: any;
-    @Output('hasError') hasError: EventEmitter<boolean> = new EventEmitter();
-    @Output('ng2TelOutput') ng2TelOutput: EventEmitter<any> = new EventEmitter();
-    @Output('countryChange') countryChange: EventEmitter<any> = new EventEmitter();
-    @Output('intlTelInputObject') intlTelInputObject: EventEmitter<any> = new EventEmitter();
-    ngTelInput: any;
-    constructor (private el: ElementRef) {}
-    ngOnInit() {
-        this.ngTelInput = $(this.el.nativeElement);
-        if(this.ng2TelInputOptions) {
-            this.ngTelInput.intlTelInput(this.ng2TelInputOptions);
-        }
-        else {
-            this.ngTelInput.intlTelInput();
-        }
+  @Input('ng2TelInputOptions') ng2TelInputOptions: any;
+  @Output('hasError') hasError: EventEmitter<boolean> = new EventEmitter();
+  @Output('ng2TelOutput') ng2TelOutput: EventEmitter<any> = new EventEmitter();
+  @Output('countryChange') countryChange: EventEmitter<any> = new EventEmitter();
+  @Output('intlTelInputObject') intlTelInputObject: EventEmitter<any> = new EventEmitter();
 
-        this.ngTelInput.on("countrychange", (e: any, countryData:any) => {
-            this.countryChange.emit(countryData);
-          });
-        this.intlTelInputObject.emit(this.ngTelInput);
-    }
+  ngTelInput: any;
 
-    @HostListener('blur') onBlur() {
-        let isInputValid:boolean = this.isInputValid();
-        if (isInputValid) {
-            let telOutput = this.ngTelInput.intlTelInput("getNumber");
-            this.hasError.emit(isInputValid);
-            this.ng2TelOutput.emit(telOutput);
-        } else 
-        {
-            this.hasError.emit(isInputValid);
-        }
-    }
+  constructor(private el: ElementRef,
+              @Inject(PLATFORM_ID) private platformId: string) {
+  }
 
-    isInputValid(): boolean {
-        return this.ngTelInput.intlTelInput('isValidNumber') ? true : false;
-    }
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.ngTelInput = window.intlTelInput(this.el.nativeElement, this.ng2TelInputOptions);
 
-    setCountry(country: any) {
-        this.ngTelInput.intlTelInput('setCountry', country);
+      this.el.nativeElement.addEventListener("countrychange", () => {
+        this.countryChange.emit(this.ngTelInput.getSelectedCountryData());
+      });
+
+      this.intlTelInputObject.emit(this.ngTelInput);
     }
+  }
+
+  @HostListener('blur') onBlur() {
+    let isInputValid: boolean = this.isInputValid();
+    if (isInputValid) {
+      let telOutput = this.ngTelInput.getNumber();
+      this.hasError.emit(isInputValid);
+      this.ng2TelOutput.emit(telOutput);
+    } else {
+      this.hasError.emit(isInputValid);
+    }
+  }
+
+  isInputValid(): boolean {
+    return this.ngTelInput.isValidNumber();
+  }
+
+  setCountry(country: any) {
+    this.ngTelInput.setCountry(country);
+  }
 }
