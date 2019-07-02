@@ -1,6 +1,6 @@
 {
   "name": "ng2-tel-input",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An Angular 2 wrapper for intl-tel-input library",
   "main": "ng2-tel-input.js",
   "scripts": {
@@ -24,23 +24,21 @@
   },
   "homepage": "https://github.com/gauravsoni119/ng2-tel-input#readme",
   "devDependencies": {
-    "@angular/compiler": "^6.1.9",
-    "@angular/compiler-cli": "^6.1.9",
-    "@angular/core": "^6.1.9",
-    "@angular/common": "^6.1.9",
-    "@types/intl-tel-input": "^0.0.9",
-    "es6-shim": "^0.35.3",
+    "@angular/compiler": "^8.0.3",
+    "@angular/compiler-cli": "^8.0.3",
+    "@angular/core": "^8.0.3",
+    "@angular/common": "^8.0.3",
+    "@types/intl-tel-input": "^14.0.1",
+    "es6-shim": "^0.35.5",
     "http-server": "^0.11.1",
-    "reflect-metadata": "^0.1.10",
-    "rxjs": "^6.0.0",
-    "typescript": "~2.7.2",
-    "zone.js": "^0.8.26"
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "typescript": "~3.4.5",
+    "zone.js": "^0.9.1"
   },
-  "peerDependencies": {
-    "@angular/core": "^6.0.3"
-  },
+  "peerDependencies": {},
   "dependencies": {
-    "intl-tel-input": "^14.0.3"
+    "intl-tel-input": "^16.0.0"
   },
   "typings": "./ng2-tel-input.d.ts"
 }
