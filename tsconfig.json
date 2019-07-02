@@ -7,7 +7,8 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "declaration": true
+        "declaration": true,
+        "types": ["@types/intl-tel-input"]
     },
     "files": [
         "ng2-tel-input.ts"
