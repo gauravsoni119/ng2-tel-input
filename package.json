@@ -38,6 +38,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
+    "@types/jquery": "^3.3.30",
     "intl-tel-input": "^16.0.0"
   },
   "typings": "./ng2-tel-input.d.ts"
