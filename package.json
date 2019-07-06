@@ -1,12 +1,15 @@
 {
   "name": "ng2-tel-input",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An Angular 2 wrapper for intl-tel-input library",
   "main": "ng2-tel-input.js",
   "scripts": {
     "watch": "tsc -p src -w",
     "start": "http-server -c-1 .",
-    "build": "ngc -p ./tsconfig-ngc.json"
+    "build": "ngc -p ./tsconfig-ngc.json",
+    "build:prod": "gulp",
+    "build:dev": "gulp buildDev",
+    "ls": "gulp --tasks"
   },
   "repository": {
     "type": "git",
@@ -14,7 +17,7 @@
   },
   "keywords": [
     "Angular",
-    "Library",
+    "country",
     "intl-tel-input"
   ],
   "author": "sonigaurav119@gmail.com",
@@ -24,23 +27,24 @@
   },
   "homepage": "https://github.com/gauravsoni119/ng2-tel-input#readme",
   "devDependencies": {
-    "@angular/compiler": "^6.1.9",
-    "@angular/compiler-cli": "^6.1.9",
-    "@angular/core": "^6.1.9",
-    "@angular/common": "^6.1.9",
+    "@angular/common": "^8.0.3",
+    "@angular/compiler": "^8.0.3",
+    "@angular/compiler-cli": "^8.0.3",
+    "@angular/core": "^8.0.3",
     "@types/intl-tel-input": "^0.0.9",
-    "es6-shim": "^0.35.3",
-    "http-server": "^0.11.1",
-    "reflect-metadata": "^0.1.10",
-    "rxjs": "^6.0.0",
-    "typescript": "~2.7.2",
-    "zone.js": "^0.8.26"
+    "es6-shim": "^0.35.5",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "typescript": "~3.4.5",
+    "zone.js": "^0.9.1"
   },
   "peerDependencies": {
-    "@angular/core": "^6.0.3"
+    "@angular/core": "^8.0.3"
   },
   "dependencies": {
-    "intl-tel-input": "^14.0.3"
+    "intl-tel-input": "^16.0.0"
   },
   "typings": "./ng2-tel-input.d.ts"
 }
