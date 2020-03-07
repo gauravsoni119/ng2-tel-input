@@ -43,12 +43,21 @@ const compile = async (cb) => {
 }
 
 /**
- * copy package.jsona and README.md, and example.png to package 
+ * copy assets to package 
  * @param {Function} cb needs to execute at the end of the function
  */
-copy = (cb) => {
-    const stream = src(['./package.json', './README.md', './example.png']).pipe(dest('./dist'));
+const copyAssets = (cb) => {
+    const stream = src(['tmp/esm2015/*.d.ts', 'tmp/esm2015/*.json','./package.json', './README.md']).pipe(dest('dist/'));
     stream.on('end', () => cb());
+};
+
+/**
+ * copy declarations(d.ts) files to package 
+ * @param {Function} cb needs to execute at the end of the function
+ */
+const copySrcDeclarations = (cb) => {
+    src('tmp/esm2015/src/*.d.ts').pipe(dest('dist/src'));
+    cb();
 };
 
 /**
@@ -69,6 +78,15 @@ const pack = async (cb) => {
  */
 const cleanDist = (cb) => {
     src(path.resolve(__dirname, 'dist')).pipe(clean());
+    cb();
+};
+
+/**
+ * Remove tmp folder
+ * @param {Function} cb needs to execute at the end of the function
+ */
+const cleanTmp = (cb) => {
+    src(path.resolve(__dirname, 'tmp')).pipe(clean());
     cb();
 };
 
@@ -96,10 +114,31 @@ const updatePackageJson = async (cb) => {
     const packageFile = JSON.parse(file);
     packageFile.devDependencies = {};
     packageFile.scripts = {};
+    packageFile.main = "./bundles/ng2-tel-input.umd.min.js";
+    packageFile.module = "./esm5/ng2-tel-input.js";
+    packageFile.es2015 = "./esm2015/ng2-tel-input.js";
+    packageFile.typings = "./ng2-tel-input.d.ts";
     const data = JSON.stringify(packageFile, null, 2);
     fs.writeFileSync(path.resolve(`${__dirname}/dist`, 'package.json'), data);
     cb();
 };
 
-exports.buildDev = series(cleanDist, compile, copy, updatePackageJson, pack);
-exports.default = series(cleanDist, compile, copy, updatePackageJson);
+/**
+ * Create tmp direcatory in root folder and copy the src into the tmp src directory 
+ * @param {Function} cb The callback that needs to execute at the end of function
+ */
+const createTempDir = async (cb) => {
+    src(['./src/**/*.ts']).pipe(dest('./tmp/src'));
+};
+
+/**
+ * Copy the public_api.ts file into the tmp directory 
+ * @param {Function} cb The callback that needs to execute at the end of function
+ */
+const copyPublicApi = async (cb) => {
+    src(['./public_api.ts']).pipe(dest('./tmp'));
+};
+
+
+exports.buildDev = series(cleanDist, createTempDir, copyPublicApi, compile, copyAssets, copySrcDeclarations, updatePackageJson, cleanTmp, pack);
+exports.default = series(cleanDist, createTempDir, copyPublicApi, compile, copyAssets, copySrcDeclarations, updatePackageJson, cleanTmp);

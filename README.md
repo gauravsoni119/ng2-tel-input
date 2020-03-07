@@ -73,4 +73,4 @@ telInputObject(obj) {
   }
 ```
 
-![N|Solid](./example.png)
+![N|Solid](https://raw.githubusercontent.com/gauravsoni119/ng2-tel-input/master/example.png)

@@ -9,9 +9,6 @@
         "sourceMap": true,
         "declaration": true
     },
-    "files": [
-        "ng2-tel-input.ts"
-    ],
     "exclude": [
         "node_modules"
     ]

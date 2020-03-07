@@ -8,7 +8,7 @@ const defaultUtilScript = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input
   selector: '[ng2TelInput]',
 })
 export class Ng2TelInput implements OnInit {
-  @Input('ng2TelInputOptions') ng2TelInputOptions: any = {};
+  @Input('ng2TelInputOptions') ng2TelInputOptions: { [key: string]: any } = {};
   @Output('hasError') hasError: EventEmitter<boolean> = new EventEmitter();
   @Output('ng2TelOutput') ng2TelOutput: EventEmitter<any> = new EventEmitter();
   @Output('countryChange') countryChange: EventEmitter<any> = new EventEmitter();

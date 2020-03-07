@@ -6,9 +6,16 @@
   "scripts": {
     "watch": "tsc -p src -w",
     "start": "http-server -c-1 .",
-    "build": "ngc -p ./tsconfig-ngc.json",
+    "build": "npm run build:esm2015 && npm run build:fesm2015 && npm run build:esm5 && npm run build:fesm5 && npm run build:umd && npm run build:umd:min",
     "build:prod": "gulp",
     "build:dev": "gulp buildDev",
+    "createTemp": "gulp createTemp",
+    "build:esm2015": "ngc -p tsconfig-esm2015.json",
+    "build:fesm2015": "rollup -c rollup-esm2015.conf.js",
+    "build:esm5": "ngc -p tsconfig-esm5.json",
+    "build:fesm5": "rollup -c rollup-esm5.conf.js",
+    "build:umd": "rollup -c rollup-umd.conf.js",
+    "build:umd:min": "uglifyjs dist/bundles/ng2-tel-input.umd.js -c -m -o dist/bundles/ng2-tel-input.umd.min.js",
     "ls": "gulp --tasks"
   },
   "repository": {
@@ -35,8 +42,11 @@
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "reflect-metadata": "^0.1.13",
+    "rollup": "^2.0.2",
     "rxjs": "^6.5.2",
+    "tsickle": "^0.38.1",
     "typescript": "~3.4.5",
+    "uglify-js": "^3.8.0",
     "zone.js": "^0.9.1"
   },
   "peerDependencies": {
@@ -44,6 +54,5 @@
   },
   "dependencies": {
     "intl-tel-input": "^16.0.0"
-  },
-  "typings": "./ng2-tel-input.d.ts"
+  }
 }
