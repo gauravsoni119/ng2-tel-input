@@ -1,3 +1,4 @@
+<h1 align="center"> This repository is no longer maintained.</h1>
 
 # Angular 2+ wrapper for intl-tel-input
 
