@@ -73,5 +73,3 @@ telInputObject(obj) {
     obj.setCountry('in');
   }
 ```
-
-![N|Solid](https://raw.githubusercontent.com/gauravsoni119/ng2-tel-input/master/example.png)
