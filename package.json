@@ -50,7 +50,7 @@
     "zone.js": "^0.9.1"
   },
   "peerDependencies": {
-    "@angular/core": "^8.0.3"
+    "@angular/core": ">=6.0.0"
   },
   "dependencies": {
     "intl-tel-input": "^16.0.0"
